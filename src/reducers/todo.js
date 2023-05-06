@@ -9,7 +9,7 @@ export function todo(todos = [], action) {
         ...todos,
       ];
     case DELETE_TODO:
-      return todos.filter((todo) => todo.todoId === action.payload);
+      return todos.filter((todo) => todo.todoId !== action.payload);
     case TOGGLE_TODO:
       return todos.map((todo) =>
         todo.todoId === action.payload
