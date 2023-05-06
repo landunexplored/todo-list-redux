@@ -43,7 +43,15 @@ function Todos({ todos, addTodo, deleteTodo, toggleTodo }) {
       <ul>
         {todos.map((todo) => (
           <li key={todo.todoId} onClick={() => toggleTodo(todo.todoId)}>
-            {todo.task}{" "}
+            <span
+              className={
+                todo.complete
+                  ? "line-through hover:cursor-pointer"
+                  : "hover:cursor-pointer"
+              }
+            >
+              {todo.task}
+            </span>{" "}
             <button onClick={() => deleteTodo(todo.todoId)}>X</button>
           </li>
         ))}
