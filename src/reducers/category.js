@@ -10,5 +10,7 @@ export function category(categories = [], action) {
           categoryName: action.payload,
         }
       ];
+    default:
+      return categories;
   }
 }

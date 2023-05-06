@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const mapStateToProps = (state) => {
   return {
-    todos: state,
+    todos: state.todo,
   };
 };
 
