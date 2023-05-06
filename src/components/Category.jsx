@@ -38,13 +38,11 @@ function Categories({ categories, addCategory }) {
         />
         <button type="submit">Add</button>
       </form>
-      <ul>
+      <select>
         {categories.map((category) => (
-          <li key={category.categoryId}>
-            <span>{category.categoryName}</span>{" "}
-          </li>
+          <option key={category.categoryId}>{category.categoryName}</option>
         ))}
-      </ul>
+      </select>
     </div>
   );
 }
