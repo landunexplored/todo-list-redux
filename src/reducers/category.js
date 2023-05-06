@@ -4,11 +4,12 @@ import { ADD_CATEGORY } from "../actions";
 export function category(categories = [], action) {
   switch (action.type) {
     case ADD_CATEGORY:
-      return categories[
+      return [
         {
-          id: uuid,
+          categoryId: uuid(),
           categoryName: action.payload,
-        }
+        },
+        ...categories,
       ];
     default:
       return categories;

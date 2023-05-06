@@ -1,7 +1,13 @@
 import Todos from "./components/Todos.jsx";
+import Category from "./components/Category.jsx";
 
 function App() {
-  return <Todos />;
+  return (
+    <>
+      <Category />
+      <Todos />
+    </>
+  );
 }
 
 export default App;
