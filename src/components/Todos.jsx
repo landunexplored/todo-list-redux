@@ -31,6 +31,7 @@ function Todos({ todos, addTodo, deleteTodo, toggleTodo }) {
   }
   return (
     <div>
+      <h1 className="text-3xl text-center">Todos</h1>
       <form onSubmit={submitForm}>
         <input
           type="text"

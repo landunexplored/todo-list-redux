@@ -1,0 +1,1 @@
+function category(categories = [], action) {}
