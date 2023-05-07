@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const mapStateToProps = (state) => {
   return {
-    categories: state.category,
+    category: state.category,
   };
 };
 
@@ -14,7 +14,7 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-function Categories({ categories, addCategory }) {
+function Categories({ category, addCategory }) {
   const [categoryText, setCategoryText] = useState("");
 
   function updateCategoryText(e) {
@@ -39,7 +39,7 @@ function Categories({ categories, addCategory }) {
         <button type="submit">Add</button>
       </form>
       <select>
-        {categories.map((category) => (
+        {category.categories.map((category) => (
           <option key={category.categoryId}>{category.categoryName}</option>
         ))}
       </select>

@@ -1,25 +1,30 @@
 import { v4 as uuid } from "uuid";
 import { ADD_CATEGORY } from "../actions";
 
-export function category(
-  categories = [
+const initialCategoryId = uuid();
+const categoryInitialState = {
+  categories: [
     {
-      categoryId: uuid(),
+      categoryId: initialCategoryId,
       categoryName: "General",
     },
   ],
-  action
-) {
+  currentCategory: initialCategoryId,
+};
+
+export function category(category = categoryInitialState, action) {
   switch (action.type) {
     case ADD_CATEGORY:
-      return [
-        {
-          categoryId: uuid(),
-          categoryName: action.payload,
-        },
-        ...categories,
-      ];
+      return Object.assign(category, {
+        categories: [
+          {
+            categoryId: uuid(),
+            categoryName: action.payload,
+          },
+          ...category.categories,
+        ],
+      });
     default:
-      return categories;
+      return category;
   }
 }
