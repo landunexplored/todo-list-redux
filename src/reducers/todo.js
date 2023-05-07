@@ -5,7 +5,12 @@ export function todo(todos = [], action) {
   switch (action.type) {
     case ADD_TODO:
       return [
-        { todoId: uuid(), task: action.payload, complete: false },
+        {
+          todoId: uuid(),
+          task: action.payload.task,
+          complete: false,
+          categoryId: action.payload.categoryId,
+        },
         ...todos,
       ];
     case DELETE_TODO:

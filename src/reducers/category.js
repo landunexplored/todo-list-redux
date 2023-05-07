@@ -1,7 +1,7 @@
 import { v4 as uuid } from "uuid";
 import { ADD_CATEGORY } from "../actions";
 
-const initialCategoryId = uuid();
+export const initialCategoryId = uuid();
 const categoryInitialState = {
   categories: [
     {

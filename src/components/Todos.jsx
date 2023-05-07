@@ -5,7 +5,7 @@ import { useState } from "react";
 const mapStateToProps = (state) => {
   return {
     todos: state.todo,
-    categories: state.category,
+    category: state.category,
   };
 };
 
@@ -17,7 +17,7 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-function Todos({ todos, addTodo, deleteTodo, toggleTodo }) {
+function Todos({ todos, category, addTodo, deleteTodo, toggleTodo }) {
   const [todoText, setTodoText] = useState("");
 
   function updateTodoText(e) {
@@ -27,7 +27,10 @@ function Todos({ todos, addTodo, deleteTodo, toggleTodo }) {
   function submitForm(e) {
     e.preventDefault();
 
-    addTodo(todoText.trim());
+    addTodo({
+      task: todoText.trim(),
+      categoryId: category.currentCategory,
+    });
     setTodoText("");
   }
   return (
