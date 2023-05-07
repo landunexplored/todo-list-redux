@@ -5,6 +5,7 @@ import { useState } from "react";
 const mapStateToProps = (state) => {
   return {
     todos: state.todo,
+    categories: state.category,
   };
 };
 
